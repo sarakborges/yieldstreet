@@ -52,6 +52,75 @@
     <script>
       reactSurvey = {
         title: 'Test Survey',
+        steps: [
+          {
+            stepTitle: 'Identity',
+            fields: [
+              {
+                fieldTitle: 'Name',
+                fieldType: 'input',
+              },
+
+              {
+                fieldTitle: 'Email',
+                fieldType: 'input',
+              },
+            ],
+          },
+
+          {
+            stepTitle: 'Details',
+            fields: [
+              {
+                fieldTitle: 'Age',
+                fieldType: 'select',
+                values: [],
+              },
+
+              {
+                fieldTitle: 'Gender',
+                fieldType: 'radio',
+                values: [
+                  'Cis male',
+                  'Trans male',
+                  'Cis female',
+                  'Trans female',
+                  'Non-binary',
+                  'Agender',
+                  'Other',
+                  "Don't want to answer this",
+                ],
+              },
+            ],
+          },
+
+          {
+            stepTitle: 'Favorites',
+            fields: [
+              {
+                fieldTitle: 'Favorite Book',
+                fieldType: 'input',
+              },
+
+              {
+                fieldTitle: 'Favorite Colors',
+                fieldType: 'checkbox',
+                multi: true,
+                values: [
+                  'Black',
+                  'White',
+                  'Blue',
+                  'Red',
+                  'Yellow',
+                  'Green',
+                  'Purple',
+                  'Orange',
+                  'Brown',
+                ],
+              },
+            ],
+          },
+        ],
       }
     </script>
   </body>

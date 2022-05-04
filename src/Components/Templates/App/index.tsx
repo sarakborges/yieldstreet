@@ -2,6 +2,8 @@ import { FC, useCallback, useContext, useEffect } from 'react'
 
 import { AppContext } from 'Contexts'
 
+import { AppProps } from 'Helpers/Props'
+
 import { Modal } from 'Components/Atoms'
 
 import * as Styled from './style'
@@ -11,8 +13,10 @@ export const AppTemplate: FC = () => {
   const { title } = appState
 
   const startApp = useCallback(() => {
-    setAppState?.({ ...appState, ...window.reactSurvey })
-  }, [appState, setAppState])
+    setAppState?.((prevState: AppProps) => {
+      return { ...prevState, ...window.reactSurvey }
+    })
+  }, [setAppState])
 
   useEffect(() => {
     startApp()
