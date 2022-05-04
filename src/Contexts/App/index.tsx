@@ -3,6 +3,7 @@ import { Dispatch, createContext, useState, FC, ReactNode } from 'react'
 import { AppProps } from 'Helpers/Props'
 
 const INITIAL_STATE = {
+  title: '',
   step: 0,
   steps: [],
   answers: [],

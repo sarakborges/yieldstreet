@@ -1,6 +1,7 @@
+import { StepsProps, AnswerProps } from 'Helpers/Props'
 export interface AppProps {
-  step?: number
-  steps?: Array<{}>
-  answers?: Array<number>
-  title?: string
+  title: string
+  step: number
+  steps: StepsProps[]
+  answers: AnswerProps[]
 }

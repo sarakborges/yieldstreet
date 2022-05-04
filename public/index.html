@@ -51,7 +51,6 @@
 
     <script>
       reactSurvey = {
-        title: 'Test Survey',
         steps: [
           {
             stepTitle: 'Identity',
@@ -81,10 +80,10 @@
                 fieldTitle: 'Gender',
                 fieldType: 'radio',
                 values: [
-                  'Cis male',
-                  'Trans male',
-                  'Cis female',
-                  'Trans female',
+                  'Cis man',
+                  'Trans man',
+                  'Cis woman',
+                  'Trans woman',
                   'Non-binary',
                   'Agender',
                   'Other',
@@ -119,6 +118,44 @@
                 ],
               },
             ],
+          },
+        ],
+
+        answers: [
+          {
+            step: 1,
+            field: 'Age',
+            value: ['29 anos'],
+          },
+
+          {
+            step: 2,
+            field: 'Favorite Book',
+            value: ['Harry Potter e a Pedra Filosofal'],
+          },
+
+          {
+            step: 2,
+            field: 'Favorite Colors',
+            value: ['Black', 'Purple'],
+          },
+
+          {
+            step: 0,
+            field: 'Name',
+            value: ['Sara'],
+          },
+
+          {
+            step: 0,
+            field: 'Email',
+            value: ['sarakborges@outlook.com'],
+          },
+
+          {
+            step: 1,
+            field: 'Gender',
+            value: ['Trans woman'],
           },
         ],
       }
