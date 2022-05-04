@@ -8,6 +8,7 @@ export const GlobalStyles = createGlobalStyle`
     --transparentBlack: rgba(0, 0, 0, .5);
     --white: #fff;
     --black: #000;
+    --purple: #831de2;
   }
 
   * {

@@ -19,6 +19,7 @@ export const ModalWrapper = styled.div`
 `
 
 export const ModalContainer = styled.div`
+  width: clamp(260px, 400px, 100%);
   padding: 16px;
 
   border-radius: 8px;
