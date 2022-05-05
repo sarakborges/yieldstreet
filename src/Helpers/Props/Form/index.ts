@@ -1,5 +1,7 @@
 export interface FormProps {
   step: number
-  field: string
+  fieldTitle: string
+  fieldType: string
   value: Array<string>
+  required?: boolean
 }

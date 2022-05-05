@@ -10,13 +10,13 @@ import * as Styled from './style'
 
 export const AppTemplate: FC = () => {
   const { appState } = useContext(AppContext)
-  const { steps } = appState
+  const { steps, isSubmitted } = appState
 
   return (
     <>
       <Styled.GlobalStyles />
 
-      {!!steps?.length && (
+      {!!steps?.length && !isSubmitted && (
         <Modal>
           <Styled.ModalBodyWrapper>
             <Steps />

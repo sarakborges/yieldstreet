@@ -7,6 +7,7 @@ const INITIAL_STATE = {
   step: 0,
   steps: [],
   answers: [],
+  isSubmitted: false,
 }
 
 export const AppContext = createContext<{

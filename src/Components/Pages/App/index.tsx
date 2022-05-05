@@ -28,6 +28,22 @@ export const AppPage: FC = () => {
 
   useEffect(() => {
     let localData = localStorage.getItem('react-survey')
+    let localDataSubmitted = localStorage.getItem('react-survey-submitted')
+
+    if (localDataSubmitted) {
+      localDataSubmitted = JSON.parse(localDataSubmitted)
+
+      setAppState?.((prevState: AppProps) => {
+        return {
+          ...prevState,
+          isSubmitted: localDataSubmitted,
+        }
+      })
+
+      if (localDataSubmitted) {
+        return
+      }
+    }
 
     if (localData) {
       localData = JSON.parse(localData)
@@ -46,7 +62,7 @@ export const AppPage: FC = () => {
         ]
       }),
     ])
-  }, [steps, setFormState])
+  }, [steps, setFormState, setAppState])
 
   return <AppTemplate />
 }

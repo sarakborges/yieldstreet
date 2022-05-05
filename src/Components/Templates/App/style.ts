@@ -18,6 +18,8 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   input, button, select{
+    margin: 0;
+    
     font-family: inherit;
   }
   

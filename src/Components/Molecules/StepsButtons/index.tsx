@@ -1,6 +1,6 @@
 import { FC, useContext } from 'react'
 
-import { AppContext } from 'Contexts'
+import { AppContext, FormContext } from 'Contexts'
 
 import { AppProps } from 'Helpers/Props'
 
@@ -12,13 +12,37 @@ export const StepsButtons: FC = () => {
   const { appState, setAppState } = useContext(AppContext)
   const { step, steps } = appState
 
+  const { formState } = useContext(FormContext)
+
   const changeStep = (step: number) => {
     if (step > steps.length || step < 0) {
       return
     }
 
     setAppState?.((prevState: AppProps) => {
+      if (step > prevState.step) {
+        for (let stepItem of formState[prevState.step]) {
+          if (
+            stepItem.required &&
+            (stepItem.value.includes('') || !stepItem.value.length)
+          ) {
+            return { ...prevState }
+          }
+        }
+      }
+
       return { ...prevState, step }
+    })
+  }
+
+  const handleSubmit = () => {
+    localStorage.setItem('react-survey-submitted', JSON.stringify(true))
+
+    setAppState?.((prevState: AppProps) => {
+      return {
+        ...prevState,
+        isSubmitted: true,
+      }
     })
   }
 
@@ -46,7 +70,9 @@ export const StepsButtons: FC = () => {
             Next step
           </Button>
         ) : (
-          <Button type="button">Submit</Button>
+          <Button type="button" onClick={handleSubmit}>
+            Submit
+          </Button>
         )}
       </div>
     </Styled.StepsButtonsWrapper>

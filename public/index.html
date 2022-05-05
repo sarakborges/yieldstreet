@@ -73,13 +73,14 @@
               {
                 fieldTitle: 'Age',
                 fieldType: 'select',
-                values: [],
+                options: ['< 13', '13-16', '16-18', '> 18'],
+                required: true,
               },
 
               {
                 fieldTitle: 'Gender',
                 fieldType: 'radio',
-                values: [
+                options: [
                   'Cis man',
                   'Trans man',
                   'Cis woman',
@@ -89,6 +90,7 @@
                   'Other',
                   "Don't want to answer this",
                 ],
+                required: true,
               },
             ],
           },
@@ -99,13 +101,13 @@
               {
                 fieldTitle: 'Favorite Book',
                 fieldType: 'input',
+                required: true,
               },
 
               {
                 fieldTitle: 'Favorite Colors',
                 fieldType: 'checkbox',
-                multi: true,
-                values: [
+                options: [
                   'Black',
                   'White',
                   'Blue',
@@ -116,6 +118,7 @@
                   'Orange',
                   'Brown',
                 ],
+                required: true,
               },
             ],
           },
