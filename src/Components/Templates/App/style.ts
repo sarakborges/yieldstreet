@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 import reset from 'styled-reset'
 
 export const GlobalStyles = createGlobalStyle`
@@ -26,4 +26,10 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 16px;
     color: var(--black);
   }
+`
+
+export const ModalBodyWrapper = styled.div`
+  display: flex;
+  flex-flow: column;
+  gap: 32px;
 `

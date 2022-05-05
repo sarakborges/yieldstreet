@@ -8,8 +8,12 @@ import * as Styled from './style'
 
 export const Summary: FC = () => {
   const {
-    appState: { title, steps },
+    appState: { title, steps, step },
   } = useContext(AppContext)
+
+  if (step !== steps.length) {
+    return <></>
+  }
 
   return (
     <div>

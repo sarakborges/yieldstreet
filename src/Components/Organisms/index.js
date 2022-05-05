@@ -1,3 +1,4 @@
 import { Summary } from './Summary'
+import { Steps } from './Steps'
 
-export { Summary }
+export { Summary, Steps }
