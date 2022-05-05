@@ -14,7 +14,7 @@ This is a reusable survey lib. With it, you can set your own survey. You need to
 
 # Running as a lib
 
-- Download `react-survey` from: downloadlink
+- Download `react-survey` from: `https://drive.google.com/file/d/1DbhIaNRAfjyMJJyLhIy2rdp5iuM1rC_3/view?usp=sharing`
 - Import it at your project
 - Set up your survey
 
@@ -38,4 +38,5 @@ This is a reusable survey lib. With it, you can set your own survey. You need to
 # Things to consider
 
 - I used a bit of what I understand about Atomic Design.
+- No experience with testing, but would love to have a bit of time to learn.
 - I did it with a whole lot of love.
