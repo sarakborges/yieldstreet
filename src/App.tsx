@@ -1,13 +1,15 @@
 import { FC } from 'react'
 
-import { AppProvider } from 'Contexts'
+import { AppProvider, FormProvider } from 'Contexts'
 
-import { AppTemplate } from 'Components/Templates'
+import { AppPage } from 'Components/Pages'
 
 export const App: FC = () => {
   return (
     <AppProvider>
-      <AppTemplate />
+      <FormProvider>
+        <AppPage />
+      </FormProvider>
     </AppProvider>
   )
 }

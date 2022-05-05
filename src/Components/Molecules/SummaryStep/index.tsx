@@ -18,12 +18,13 @@ export const SummaryStep: FC<SummaryFieldProps> = ({ stepItem, stepKey }) => {
 
       {!!stepItem.fields?.length && (
         <Styled.StepFields>
-          {stepItem.fields.map((fieldItem) => {
+          {stepItem.fields.map((fieldItem, fieldKey) => {
             return (
               <SummaryField
                 key={`${stepItem.stepTitle}-${fieldItem.fieldTitle}`}
                 stepKey={stepKey}
                 fieldItem={fieldItem}
+                fieldKey={fieldKey}
               />
             )
           })}

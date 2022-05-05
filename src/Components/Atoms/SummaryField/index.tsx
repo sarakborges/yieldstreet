@@ -2,19 +2,22 @@ import { FC, useContext } from 'react'
 
 import { StepProps } from 'Helpers/Props'
 
-import { AppContext } from 'Contexts'
+import { FormContext } from 'Contexts'
 
 import * as Styled from './style'
 
 interface SummaryFieldProps {
   stepKey: number
+  fieldKey: number
   fieldItem: StepProps
 }
 
-export const SummaryField: FC<SummaryFieldProps> = ({ stepKey, fieldItem }) => {
-  const {
-    appState: { answers },
-  } = useContext(AppContext)
+export const SummaryField: FC<SummaryFieldProps> = ({
+  stepKey,
+  fieldItem,
+  fieldKey,
+}) => {
+  const { formState } = useContext(FormContext)
 
   return (
     <li>
@@ -22,13 +25,7 @@ export const SummaryField: FC<SummaryFieldProps> = ({ stepKey, fieldItem }) => {
         <>
           {`- ${fieldItem.fieldTitle}: `}
 
-          {answers
-            ?.find(
-              (answerItem) =>
-                answerItem.step === stepKey &&
-                answerItem.field === fieldItem.fieldTitle
-            )
-            ?.value?.join(', ') || ''}
+          {formState?.[stepKey]?.[fieldKey]?.value?.join(', ') || ''}
         </>
       </Styled.FieldItem>
     </li>

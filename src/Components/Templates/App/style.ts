@@ -7,12 +7,14 @@ export const GlobalStyles = createGlobalStyle`
   :root {
     --transparentBlack: rgba(0, 0, 0, .5);
     --white: #fff;
+    --lightGrey: #eee;
     --black: #000;
     --purple: #831de2;
   }
 
   * {
     box-sizing: border-box;
+    outline: none;
   }
 
   input, button, select{
